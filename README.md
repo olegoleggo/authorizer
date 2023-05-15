@@ -12,5 +12,12 @@ http://37.220.80.16:8000/api/v1/links/create/ - для создания сокр
 {"source_link" : "https://vk.com/",
 "update_link" : "ВКонтакте"}
 
-htt
+http://37.220.80.16:8000/api/v1/links/delete/ - для удаления записи по id 
+Пример:
+{"pk" : "int:some_pk"}
+
+
+переход по уже имеющейся записи осуществляется так:
+
+http://37.220.80.16:8000/update_link
 
