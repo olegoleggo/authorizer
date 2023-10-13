@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_keycloak.apps.KeycloakAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django-keycloak-auth.middleware.KeycloakMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django_keycloak.auth.backends.KeycloakAuthorizationCodeBackend'
+]
+
 
 ROOT_URLCONF = 'authorizer.urls'
 
