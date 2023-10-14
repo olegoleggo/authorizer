@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from .models import Links
+from .models import Links,Student
 import validators
 
 
 class SerializeListLink(serializers.ModelSerializer):
     class Meta:
-        model = Links
+        model = Student
         fields = "__all__"
 
 

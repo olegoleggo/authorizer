@@ -66,9 +66,9 @@ WSGI_APPLICATION = 'ServiceShortLink.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shortlinkdb',
+        'NAME': 'UniFormBot',
         'USER': 'postgres',
-        'PASSWORD': '8521946733',
+        'PASSWORD': 'Indigomen_221',
         'HOST': 'localhost',
         'PORT': '5432',
     }
