@@ -12,21 +12,19 @@ SECRET_KEY = 'django-insecure-4pv9nydnv$r-ep8oh4f7d)99+1eir%ebc6+gqb*)c%439!_pm=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://1507983-cw51367.tw1.ru/','1507983-cw51367.tw1.ru', '37.220.80.16']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shortlink',
+    'rest_framework',
     'rest_framework.authtoken',
-    'djoser'
 ]
 
 MIDDLEWARE = [
@@ -39,24 +37,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ServiceShortLink.urls'
+ROOT_URLCONF = 'Core.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+
 
 WSGI_APPLICATION = 'ServiceShortLink.wsgi.application'
 
@@ -66,9 +49,9 @@ WSGI_APPLICATION = 'ServiceShortLink.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'UniFormBot',
+        'NAME': 'UniformAuthorizer',
         'USER': 'postgres',
-        'PASSWORD': 'Indigomen_221',
+        'PASSWORD': '8521946733',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -112,9 +95,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-         ]
 
-}

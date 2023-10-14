@@ -26,7 +26,8 @@ class CustomUser(models.Model):
     date_birth = models.DateTimeField(db_column='date_birth', verbose_name="День рождения", null=True, blank=True)
     phone_number = models.CharField(db_column='phone_number', verbose_name="номер телефона", max_length=18, null=True,
                                     unique=True)
-    avatar = models.ImageField(db_column="avatar", verbose_name="Аватарка пользователя", null=True)
+    avatar = models.ImageField(db_column="avatar", verbose_name="Аватарка пользователя", null=True,
+                               upload_to='images/student avatar')
     name = models.CharField(db_column='name', verbose_name="имя", max_length=20, null=True, unique=False)
     surname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
 
