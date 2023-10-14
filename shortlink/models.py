@@ -26,6 +26,7 @@ class CustomUser(models.Model):
     date_birth = models.DateTimeField(db_column='date_birth', verbose_name="День рождения", null=True, blank=True)
     phone_number = models.CharField(db_column='phone_number', verbose_name="номер телефона", max_length=18, null=True,
                                     unique=True)
+    avatar = models.ImageField(db_column="avatar", verbose_name="Аватарка пользователя", null=True)
     name = models.CharField(db_column='name', verbose_name="имя", max_length=20, null=True, unique=False)
     surname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
 
@@ -39,6 +40,8 @@ class Student(models.Model):
     is_headman = models.BooleanField(default=False, verbose_name='Признак старосты', null=True)
     grant = models.CharField(default=False, db_column='grants', verbose_name="степендия",
                              max_length=60)
+    student_ticket_id = models.CharField(db_column='tciket_id', verbose_name="номер студенческого билета", max_length=20, null=True, unique=True)
+    date_end = models.DateTimeField(db_column='date_end', verbose_name="Дествителен до", null=True, blank=True)
     exam_points = models.SmallIntegerField(db_column='exam_points', verbose_name="баллы за экзамен", unique=False)
 
 
