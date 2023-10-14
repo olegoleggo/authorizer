@@ -27,9 +27,14 @@ class CustomUser(models.Model):
     phone_number = models.CharField(db_column='phone_number', verbose_name="номер телефона", max_length=18, null=True,
                                     unique=True)
     avatar = models.ImageField(db_column="avatar", verbose_name="Аватарка пользователя", null=True,
-                               upload_to='images/student avatar')
+                               upload_to='images/avatar')
     name = models.CharField(db_column='name', verbose_name="имя", max_length=20, null=True, unique=False)
     surname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
+    lastname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
+
+    qr = models.ImageField(db_column="qr", verbose_name="QR код пользака", null=True,
+                               upload_to='images/qr')
+
 
 
 class Student(models.Model):
