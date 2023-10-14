@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
@@ -17,7 +17,7 @@ class University(models.Model):
     city = models.CharField(db_column='city', verbose_name="город", max_length=50, unique=False)
 
 
-class CustomUser(models.Model):
+class CustomUser(AbstractUser):
     choices = (("male", "мужчина"), ("female", "женщина"))
 
     id = models.UUIDField(default=uuid4, primary_key=True)
@@ -30,7 +30,7 @@ class CustomUser(models.Model):
                                upload_to='images/avatar')
     name = models.CharField(db_column='name', verbose_name="имя", max_length=20, null=True, unique=False)
     surname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
-    lastname = models.CharField(db_column='surname', verbose_name="фамилия", max_length=20, null=True, unique=False)
+    lastname = models.CharField(db_column='lastname', verbose_name="фамилия", max_length=20, null=True, unique=False)
 
     qr = models.ImageField(db_column="qr", verbose_name="QR код пользака", null=True,
                                upload_to='images/qr')
