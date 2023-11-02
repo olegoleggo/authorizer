@@ -1,6 +1,11 @@
 from .connection import connection
 from loguru import logger
 query = """
+CREATE TABLE sessions(
+    id UUID PRIMARY KEY,
+    session UUID,
+    active BOOLEAN
+);
 CREATE TABLE custom_user (
     id UUID PRIMARY KEY,
     gender VARCHAR(10) CHECK (gender IN ('male', 'female')),
@@ -10,7 +15,8 @@ CREATE TABLE custom_user (
     name VARCHAR(20),
     surname VARCHAR(20),
     lastname VARCHAR(20),
-    qr VARCHAR(255)
+    qr VARCHAR(255),
+    session UUID REFERENCES sessions(id) ON DELETE CASCADE
 );
 CREATE TABLE university (
     id UUID PRIMARY KEY ,
@@ -77,3 +83,6 @@ async def db_startup():
         await connect.execute(query)
     except Exception as error:
         logger.error(error)
+
+
+
